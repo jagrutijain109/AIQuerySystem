@@ -25,17 +25,19 @@ This project implements a **Role-Aware Retrieval-Augmented Generation (RAG)** sy
 
 ## 📁 Project Structure
 
-├── app.py # Flask API backend
-├── create_bin.py # Build and save FAISS index and embeddings
-├── document_loader.py # PDF loading and chunking utility
-├── embedding_store.py # FAISS index & embedding model handling
-├── rag_engine.py # Query answering pipeline using embeddings + LLM
-├── front_end.py # Streamlit UI with feedback system
-├── feedback.db # SQLite DB for feedback (auto-created)
-├── vectorstore/ # FAISS index and doc map files
+```plaintext
+.
+├── app.py                  # Flask API backend
+├── create_bin.py           # Build and save FAISS index and embeddings
+├── document_loader.py      # PDF loading and chunking utility
+├── embedding_store.py      # FAISS index & embedding model handling
+├── rag_engine.py           # Query answering pipeline using embeddings + LLM
+├── front_end.py            # Streamlit UI with feedback system
+├── feedback.db             # SQLite DB for feedback (auto-created)
+├── vectorstore/            # FAISS index and doc map files
 └── data/
-├── manager/ # Manager PDFs
-└── employee/ # Employee PDFs
+    ├── manager/            # Manager PDFs
+    └── employee/           # Employee PDFs
 
 ---
 
