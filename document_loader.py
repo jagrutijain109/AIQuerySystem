@@ -1,44 +1,5 @@
-# import fitz  # PyMuPDF 
-# import os
 
-# def load_documents_from_folder(folder_path, max_pages=50):
-#     documents = []
-#     for filename in os.listdir(folder_path):
-#         if filename.endswith(".pdf"):
-#             file_path = os.path.join(folder_path, filename)
-#             try:
-#                 doc = fitz.open(file_path)
-#                 text = ""
-
-#                 # Limit to max_pages to avoid loading huge files
-#                 for i, page in enumerate(doc):
-#                     if i >= max_pages:
-#                         break
-#                     text += page.get_text()
-
-#                 documents.append((filename, text))
-#                 doc.close()
-#             except Exception as e:
-#                 print(f"Error loading {filename}: {e}")
-#     return documents
-
-# def chunk_text(text, chunk_size=1000, overlap=200, max_chunks=200):
-#     chunks = []
-#     start = 0
-#     text_length = len(text)
-#     chunk_count = 0
-
-#     while start < text_length and chunk_count < max_chunks:
-#         end = min(start + chunk_size, text_length)
-#         chunk = text[start:end]
-#         chunks.append(chunk)
-#         chunk_count += 1
-#         start += chunk_size - overlap  # step forward
-
-#     return chunks
-
-
-import fitz  # PyMuPDF
+import fitz 
 import os
 
 def load_documents_by_role(base_folder="data", max_pages=50):
@@ -81,6 +42,6 @@ def chunk_text(text, chunk_size=1000, overlap=200, max_chunks=200):
         chunk = text[start:end]
         chunks.append(chunk)
         chunk_count += 1
-        start += chunk_size - overlap  # step forward
+        start += chunk_size - overlap  
 
     return chunks
